@@ -1766,7 +1766,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7a21da;
+  background: #bf1116;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2846,40 +2846,10 @@ hr {
     text-align: center;
   }
 }
-body {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 50%;
-  background-size: cover;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.5;
-}
-.site-meta {
-  background-image: linear-gradient(90deg, #f79533 0%, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
-}
-.site-nav-toggle {
-  top: 20px;
-  left: 10px;
-}
-.btn-bar {
-  background: #fff;
-}
-@media (max-width: 767px) {
-  .menu {
-    text-align: center;
-  }
-  .site-nav {
-    top: initial;
-    background: rgba(255,255,255,0.75);
-    border-top: none;
-    border-bottom: none;
-  }
-}
-文章标题颜色,
-.posts-expand .post-title-link {
-  color: #fff;
-}
-.posts-expand .post-title-link::before {
-  background-color: #ff7600;
-  background-image: linear-gradient(90deg, #f79533 0%, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
+.post {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
