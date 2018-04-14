@@ -18,7 +18,7 @@
   <entry>
     <title><![CDATA[python中print和return]]></title>
     <url>%2F2018%2F03%2F31%2Fpython%E4%B8%ADprint%E5%92%8Creturn%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"><![CDATA[先贴上两段简单的代码：1：a=1;b=2def sum(a,b): c=a+b return cprint(sum(a,b)) 2:a=1;b=2def sum(a,b): c=a+b print(c)print(sum(a,b)) 输出结果是相同的都为：3这里代码1的结果是打印返回值得到的，而代码2的结果是在打印函数sum(a, b)时，sum (a, b)执行print c语句而得到的，其返回值是None，所以输出结果应为:3None返回值只有打印后才能得到，return的值是不会直接输出的。print(print(print(None)))的输出结果就是：NoneNoneNone]]></content>
+    <content type="text"><![CDATA[开始总是不怎么理解print的返回值，今天偶然看到一篇文章，豁然开朗,先贴上两段简单的代码：1：a=1;b=2def sum(a,b): c=a+b return cprint(sum(a,b)) 2:a=1;b=2def sum(a,b): c=a+b print(c)print(sum(a,b)) 输出结果是相同的都为：3这里代码1的结果是打印返回值得到的，而代码2的结果是在打印函数sum(a, b)时，sum (a, b)执行print c语句而得到的，其返回值是None，所以输出结果应为:3None返回值只有打印后才能得到，return的值是不会直接输出的。print(print(print(None)))的输出结果就是：NoneNoneNone]]></content>
   </entry>
   <entry>
     <title><![CDATA[道歉]]></title>
