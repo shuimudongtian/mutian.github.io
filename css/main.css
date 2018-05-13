@@ -1766,7 +1766,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e4ffff;
+  background: #b5d5d0;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2656,7 +2656,7 @@ hr {
   display: none;
 }
 .menu .menu-item {
-  margin: 0;
+  margin: 2px;
 }
 @media (max-width: 767px) {
   .menu .menu-item {
@@ -2665,7 +2665,7 @@ hr {
 }
 .menu .menu-item a {
   padding: 5px 20px;
-  background: #4e94ea;
+  background: #9dd9f7;
   border: none;
   color: #fff;
   border-radius: 10px;
