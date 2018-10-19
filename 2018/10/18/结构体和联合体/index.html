@@ -98,16 +98,17 @@
 
 
 
-<meta name="description" content="A man who can&apos;t read his mind.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zl&amp;mf的小屋">
-<meta property="og:url" content="http://www.limingfan.cn/archives/2018/03/index.html">
+<meta name="description" content="当多个数据需要共享内存或者多个数据每次只取其一时，可以利用联合体(union)。在C Programming Language 一书中对于联合体是这么描述的：     1)联合体是一个结构；     2)它的所有成员相对于基地址的偏移量都为0；     3)此结构空间要大到足够容纳最”宽”的成员；     4)其对齐方式要适合其中所有的成员；下面解释这四条描述：     由于联合体中的所有成员是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="结构体和联合体">
+<meta property="og:url" content="http://www.limingfan.cn/2018/10/18/结构体和联合体/index.html">
 <meta property="og:site_name" content="zl&amp;mf的小屋">
-<meta property="og:description" content="A man who can&apos;t read his mind.">
+<meta property="og:description" content="当多个数据需要共享内存或者多个数据每次只取其一时，可以利用联合体(union)。在C Programming Language 一书中对于联合体是这么描述的：     1)联合体是一个结构；     2)它的所有成员相对于基地址的偏移量都为0；     3)此结构空间要大到足够容纳最”宽”的成员；     4)其对齐方式要适合其中所有的成员；下面解释这四条描述：     由于联合体中的所有成员是">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-19T14:51:19.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zl&amp;mf的小屋">
-<meta name="twitter:description" content="A man who can&apos;t read his mind.">
+<meta name="twitter:title" content="结构体和联合体">
+<meta name="twitter:description" content="当多个数据需要共享内存或者多个数据每次只取其一时，可以利用联合体(union)。在C Programming Language 一书中对于联合体是这么描述的：     1)联合体是一个结构；     2)它的所有成员相对于基地址的偏移量都为0；     3)此结构空间要大到足够容纳最”宽”的成员；     4)其对齐方式要适合其中所有的成员；下面解释这四条描述：     由于联合体中的所有成员是">
 
 
 
@@ -135,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://www.limingfan.cn/archives/2018/03/"/>
+  <link rel="canonical" href="http://www.limingfan.cn/2018/10/18/结构体和联合体/"/>
 
 
 
@@ -152,7 +153,7 @@
         }
     })();
 </script>
-  <title>归档 | zl&mf的小屋</title>
+  <title>结构体和联合体 | zl&mf的小屋</title>
   
 
 
@@ -196,7 +197,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -324,102 +325,225 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-       
-      
-      OK! 目前共计 37 篇文章， 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/31/python中print和return的区别/" itemprop="url">
-              
-                <span itemprop="name">python中print和return</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-31T11:09:11+08:00"
-              content="2018-03-31" >
-          03-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/26/道歉/" itemprop="url">
-              
-                <span itemprop="name">道歉</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-26T23:27:45+08:00"
-              content="2018-03-26" >
-          03-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.limingfan.cn/2018/10/18/结构体和联合体/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zl love mf">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://osq79d99q.bkt.clouddn.com/%E6%9D%BE%E9%BC%A0.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zl&mf的小屋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">结构体和联合体</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T09:59:14+08:00">
+                2018-10-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-19T22:51:19+08:00">
+                2018-10-19
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="\assets\js\APlayer.min.js"> </script><p>当多个数据需要共享内存或者多个数据每次只取其一时，可以利用联合体(union)。在C Programming Language 一书中对于联合体是这么描述的：<br>     1)联合体是一个结构；<br>     2)它的所有成员相对于基地址的偏移量都为0；<br>     3)此结构空间要大到足够容纳最”宽”的成员；<br>     4)其对齐方式要适合其中所有的成员；<br>下面解释这四条描述：<br>     由于联合体中的所有成员是共享一段内存的，因此每个成员的存放首地址相对于于联合体变量的基地址的偏移量为0，即所有成员的首地址都是一样的。为了使得所有成员能够共享一段内存，因此该空间必须足够容纳这些成员中最宽的成员。对于这句”对齐方式要适合其中所有的成员”是指其必须符合所有成员的自身对齐方式。<br>例如，代码：       </p>
+<pre><code>union U
+{
+char s[9];
+int n;
+double d;
+};
+</code></pre><p>s占9字节，n占4字节，d占8字节，因此其至少需9字节的空间。然而其实际大小并不是9，用运算符sizeof测试其大小为16.这是因为这里存在字节对齐的问题，9既不能被4整除，也不能被8整除。因此补充字节到16，这样就符合所有成员的自身对齐了。从这里可以看出联合体所占的空间不仅取决于最宽成员，还跟所有成员有关系，即其大小必须满足两个条件：1)大小足够容纳最宽的成员；2)大小能被其包含的所有基本数据类型的大小所整除。<br>测试程序：</p>
+<p>对于sizeof(u1)=16。因为u1中s占9字节，n占4字节，d占8字节，因此至少需要9字节。其包含的基本数据类型为char，int，double分别占1，4，8字节，为了使u1所占空间的大小能被1，4，8整除，则需填充字节以到16，因此sizeof(u1)=16.<br>对于sizeof(u2)=8。因为u2中s占5字节，n占4字节，d占8字节，因此至少需要8字节。其包含的基本数据类型为char，int，double分别占1，4，8字节，为了使u2所占空间的大小能被1，4，8整除，不需填充字节，因为8本身就能满足要求。因此sizeof(u2)=8。<br>从打印出的每个成员的基地址可以看出，联合体中每个成员的基地址都相同，等于联合体变量的首地址。(代码省略)<br>对u1.n=1，将u1的n赋值为1后，则该段内存的前4个字节存储的数据为00000001 00000000 00000000 00000000<br>因此取s[0]的数据表示取第一个单元的数据，其整型值为1，所以打印出的结果为1.<br>关于结构体和联合体所占内存空间大小的问题：<br>//<br>// Created by z lin zhang on 2018/10/16.<br>//</p>
+<pre><code>#include &lt;stdio.h&gt;
+union U1
+ {
+   char s[ 9 ];
+   int n;
+   double d;
+ };
+
+ union U2
+ {
+   char s[ 5 ];
+   int n;
+   double d;
+ };
+
+ struct student{
+
+ char A;
+ int B;
+ short C;
+
+ }student1;
+struct tagPhone{
+ char   A;
+ short  C;
+ int    B;
+}Phone2;
+struct str2
+{
+double a;
+int b;
+char c;
+double d;
+}str21;
+int main(){
+union U1 u1;
+union U2 u2;
+printf(&quot;char short int float  double is %d %d %d %d     %d\n&quot;, sizeof(char), sizeof(short), sizeof(int),     sizeof(float),sizeof(double));
+printf(&quot;u1 is %d\n&quot;, sizeof(u1));
+printf(&quot;u2 is %d\n&quot;, sizeof(u2));
+printf(&quot;student1 is %d\n&quot;, sizeof(student1));
+printf(&quot;phone2 is %d\n&quot;, sizeof(Phone2));
+printf(&quot;str21 is %d\n&quot;, sizeof(str21));
+
+}
+</code></pre><p>输出结果是：<br>u1 is 16<br>u2 is 8<br>student1 is 12<br>phone2 is 8<br>str21 is 24<br>char short int float  double is 1  2  4  4  8<br>r</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/06/数据结构-树与二叉树/" rel="next" title="数据结构-树与二叉树">
+                <i class="fa fa-chevron-left"></i> 数据结构-树与二叉树
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/19/真题笔记/" rel="prev" title="真题笔记">
+                真题笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+	<span class="jiathis_txt">分享到:</span>
+	<a class="jiathis_button_cqq">QQ</a>
+	<a class="jiathis_button_qzone">空间</a>
+	<a class="jiathis_button_tsina">微博</a>
+	<a class="jiathis_button_weixin">微信</a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -427,6 +551,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
 
         </div>
         
@@ -680,11 +810,9 @@ siteTime()
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
