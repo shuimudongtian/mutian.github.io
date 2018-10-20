@@ -105,7 +105,7 @@
 <meta property="og:site_name" content="zl&amp;mf的小屋">
 <meta property="og:description" content="当多个数据需要共享内存或者多个数据每次只取其一时，可以利用联合体(union)。在C Programming Language 一书中对于联合体是这么描述的：     1)联合体是一个结构；     2)它的所有成员相对于基地址的偏移量都为0；     3)此结构空间要大到足够容纳最”宽”的成员；     4)其对齐方式要适合其中所有的成员；下面解释这四条描述：     由于联合体中的所有成员是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-19T15:30:31.529Z">
+<meta property="og:updated_time" content="2018-10-20T02:40:29.499Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="结构体和联合体">
 <meta name="twitter:description" content="当多个数据需要共享内存或者多个数据每次只取其一时，可以利用联合体(union)。在C Programming Language 一书中对于联合体是这么描述的：     1)联合体是一个结构；     2)它的所有成员相对于基地址的偏移量都为0；     3)此结构空间要大到足够容纳最”宽”的成员；     4)其对齐方式要适合其中所有的成员；下面解释这四条描述：     由于联合体中的所有成员是">
@@ -383,8 +383,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-19T23:30:31+08:00">
-                2018-10-19
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-20T10:40:29+08:00">
+                2018-10-20
               </time>
             
           </span>
@@ -444,8 +444,10 @@ int n;
 double d;
 };
 </code></pre><p>s占9字节，n占4字节，d占8字节，因此其至少需9字节的空间。然而其实际大小并不是9，用运算符sizeof测试其大小为16.这是因为这里存在字节对齐的问题，9既不能被4整除，也不能被8整除。因此补充字节到16，这样就符合所有成员的自身对齐了。从这里可以看出联合体所占的空间不仅取决于最宽成员，还跟所有成员有关系，即其大小必须满足两个条件：1)大小足够容纳最宽的成员；2)大小能被其包含的所有基本数据类型的大小所整除。<br>测试程序：</p>
-<p>对于sizeof(u1)=16。因为u1中s占9字节，n占4字节，d占8字节，因此至少需要9字节。其包含的基本数据类型为char，int，double分别占1，4，8字节，为了使u1所占空间的大小能被1，4，8整除，则需填充字节以到16，因此sizeof(u1)=16.<br>对于sizeof(u2)=8。因为u2中s占5字节，n占4字节，d占8字节，因此至少需要8字节。其包含的基本数据类型为char，int，double分别占1，4，8字节，为了使u2所占空间的大小能被1，4，8整除，不需填充字节，因为8本身就能满足要求。因此sizeof(u2)=8。<br>从打印出的每个成员的基地址可以看出，联合体中每个成员的基地址都相同，等于联合体变量的首地址。(代码省略)<br>对u1.n=1，将u1的n赋值为1后，则该段内存的前4个字节存储的数据为00000001 00000000 00000000 00000000<br>因此取s[0]的数据表示取第一个单元的数据，其整型值为1，所以打印出的结果为1.<br>关于结构体和联合体所占内存空间大小的问题：<br>//<br>// Created by z lin zhang on 2018/10/16.<br>//</p>
-<pre><code>#include &lt;stdio.h&gt;
+<p>对于sizeof(u1)=16。因为u1中s占9字节，n占4字节，d占8字节，因此至少需要9字节。其包含的基本数据类型为char，int，double分别占1，4，8字节，为了使u1所占空间的大小能被1，4，8整除，则需填充字节以到16，因此sizeof(u1)=16.<br>对于sizeof(u2)=8。因为u2中s占5字节，n占4字节，d占8字节，因此至少需要8字节。其包含的基本数据类型为char，int，double分别占1，4，8字节，为了使u2所占空间的大小能被1，4，8整除，不需填充字节，因为8本身就能满足要求。因此sizeof(u2)=8。<br>从打印出的每个成员的基地址可以看出，联合体中每个成员的基地址都相同，等于联合体变量的首地址。(代码省略)<br>对u1.n=1，将u1的n赋值为1后，则该段内存的前4个字节存储的数据为00000001 00000000 00000000 00000000<br>因此取s[0]的数据表示取第一个单元的数据，其整型值为1，所以打印出的结果为1.<br>关于结构体和联合体所占内存空间大小的问题：</p>
+<pre><code>// Created by z lin zhang on 2018/10/16.
+
+#include &lt;stdio.h&gt;
 union U1
  {
    char s[ 9 ];
@@ -554,19 +556,6 @@ printf(&quot;str21 is %d\n&quot;, sizeof(str21));
 
     <div class="post-spread">
       
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-	<span class="jiathis_txt">分享到:</span>
-	<a class="jiathis_button_cqq">QQ</a>
-	<a class="jiathis_button_qzone">空间</a>
-	<a class="jiathis_button_tsina">微博</a>
-	<a class="jiathis_button_weixin">微信</a>
-	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-	<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-      
     </div>
   </div>
 
@@ -629,7 +618,7 @@ printf(&quot;str21 is %d\n&quot;, sizeof(str21));
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1233,7 +1222,17 @@ siteTime()
 
   
 
+
+
+ 
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+
 </body>
 </html>
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/love.js"></script>
+
+
