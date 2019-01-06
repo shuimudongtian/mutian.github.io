@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="小屋 " />
+
+
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://osq79d99q.bkt.clouddn.com/favicon.png" />
+
+
+
+
+
+
+
+
+
+<meta name="description" content="操作系统基础知识为了更好地掌控计算机，使其更加有序的工作，于是出现了操作系统。操作系统是掌控计算机上所有事情的系统软件，其需要完成下面五种功能：1、控制和管理计算机系统的的所有硬件和软件资源。2、合理的组织计算机的工作流程，保证计算机资源的公平竞争和使用。3、方便用户使用计算机。4、防止对计算机资源的非法侵占和使用。5、保证操作系统自身的正常运转。操作系统的设计目标：方便性、有效性、可扩展性、开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统">
+<meta property="og:url" content="http://www.limingfan.cn/2019/01/06/操作系统/index.html">
+<meta property="og:site_name" content="zl&amp;mf的小屋">
+<meta property="og:description" content="操作系统基础知识为了更好地掌控计算机，使其更加有序的工作，于是出现了操作系统。操作系统是掌控计算机上所有事情的系统软件，其需要完成下面五种功能：1、控制和管理计算机系统的的所有硬件和软件资源。2、合理的组织计算机的工作流程，保证计算机资源的公平竞争和使用。3、方便用户使用计算机。4、防止对计算机资源的非法侵占和使用。5、保证操作系统自身的正常运转。操作系统的设计目标：方便性、有效性、可扩展性、开">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-06T02:31:29.304Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="操作系统">
+<meta name="twitter:description" content="操作系统基础知识为了更好地掌控计算机，使其更加有序的工作，于是出现了操作系统。操作系统是掌控计算机上所有事情的系统软件，其需要完成下面五种功能：1、控制和管理计算机系统的的所有硬件和软件资源。2、合理的组织计算机的工作流程，保证计算机资源的公平竞争和使用。3、方便用户使用计算机。4、防止对计算机资源的非法侵占和使用。5、保证操作系统自身的正常运转。操作系统的设计目标：方便性、有效性、可扩展性、开">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.limingfan.cn/2019/01/06/操作系统/"/>
+
+
+
+
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <title>操作系统 | zl&mf的小屋</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f39cbbe64090b66a4e67ab974f864f62";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zl&mf的小屋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">TOGETHER AND FOREVER</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fighter-jet"></i> <br />
+            
+            航拍
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            足迹
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.limingfan.cn/2019/01/06/操作系统/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zl love mf">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://osq79d99q.bkt.clouddn.com/%E6%9D%BE%E9%BC%A0.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zl&mf的小屋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">操作系统</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-06T10:24:03+08:00">
+                2019-01-06
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-01-06T10:31:29+08:00">
+                2019-01-06
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/考研复试/" itemprop="url" rel="index">
+                    <span itemprop="name">考研复试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="\assets\js\APlayer.min.js"> </script><h3 id="操作系统基础知识"><a href="#操作系统基础知识" class="headerlink" title="操作系统基础知识"></a>操作系统基础知识</h3><p>为了更好地掌控计算机，使其更加有序的工作，于是出现了操作系统。操作系统是掌控计算机上所有事情的系统软件，其需要完成下面五种功能：<br>1、控制和管理计算机系统的的所有硬件和软件资源。<br>2、合理的组织计算机的工作流程，保证计算机资源的公平竞争和使用。<br>3、方便用户使用计算机。<br>4、防止对计算机资源的非法侵占和使用。<br>5、保证操作系统自身的正常运转。<br>操作系统的设计目标：<br>方便性、有效性、可扩展性、开放性、可靠性、可移植性<br>从微观来看，在任意时刻，计算机内只有一个进程在运行。在只有一个CPU的情况下，这些进程就是交替运行的。<br>用户态和内核态：<br>运行于内核态的程序可以访问的资源多，但可靠性、安全性要求高，维护管理比较复杂；用户态程序可以访问的资源有限，但可靠性、安全性要求较低，编写程序和维护管理都比较简单。<br>应该在内核态实现的功能：CPU和内存的管理必须在内核态下实现。诊断与测试程序也应该在内核态下实现，因为诊断和测试需要访问计算机的所有资源，否则无法判断计算机是否正常工作。IO管理也一样，因为要访问各种设备和底层数据结构，所以也必须在内核态下实现。<br>对于文件管理可以一部分放在用户态一部分放在内核态。文件系统本身的管理必须放在内核态下，否则任何人都有可能破坏文件系统的结构；用户文件的管理可放在用户态下，另外：用户程序、编译程序、编辑程序、网络管理的部分功能等可以放在用户态下执行。<br>实现操作系统安全性的基本技术：<br>身份鉴别、存取控制、最小特权管理、硬件保护、安全审计、入侵检测、数据加密<br>存取控制：当主体访问一个客体时，操作系统根据该客体的存取控制表检查该主体是否有相应的访问权限。<br>最小特权管理：每个主体只能拥有与其操作相符的必要最小特权集，不能赋予用户、进程超越其执行任务所必须特权之外的任何其他特权。<br>硬件保护：采用硬件方式对内存和进程运行进行保护。<br>CPU:运算器、控制器、寄存器、高速缓存<br>运算器：负责指令中的算数和逻辑运算，由算数逻辑单元(ALU)、累加寄存器、数据缓冲寄存器和条件寄存器等组成，运算器是计算机计算的核心。<br>寄存器：是CPU内部指令处理过程中暂存数据、地址以及指令信息的存储设备，在计算机的存储系统中它具有最快的访问速度。<br>高速缓存：处于CPU和物理内存之间，一般由控制器中的内存单元来管理，它的访问数据快于内存但是低于寄存器。利用程序执行的局部性原理使得高速的指令处理和低速的内存访问得以匹配，从而提高了CPU的利用率。</p>
+<h3 id="处理器管理"><a href="#处理器管理" class="headerlink" title="处理器管理"></a>处理器管理</h3><p>程序的顺序执行：<br>程序的顺序执行具有以下三个特点：<br>1、顺序性。当程序在CPU上执行时，CPU按程序规定的顺序严格的执行程序的操作，每个操作都必须在前一个操作结束后才能开始。除人为的干预造成计算机暂时停顿外，前一个操作的结束就意味着后一个操作的开始。程序和计算机执行程序的活动严格一一对应。<br>2、封闭性。程序运行时独占全机资源，程序运行的结果仅由初始条件和程序本身的操作决定，程序一旦开始，其运行结果不会受到外界因素的影响。也就是说，程序是在完全封闭的环境下运行的。<br>3、可再现性。程序运行的结果仅与初始条件有关，而与运行的时间和速度无关。只要初始条件相同，当程序重复运行时，无论是从头至尾不间断运行还是断断续续的运行，都将获得相同的结果。<br>缺点：CPU与外部设备之间不能并行工作，资源利用率低，计算机系统效率不高。<br>程序的并发执行：<br>在计算机硬件引入通道和中断结构后，就使得CPU与外部设备之间以及外部设备与外部设备之间可以并行操作，使得多道程序设计成为可能。对于单个CPU而言，同一时刻，只有一个进程在运行，多个进程交替运行。<br>程序的并发实质上是程序将的并发，CPU与IO设备之间的并行。并发程序对资源的共享与竞争，又会导致程序执行环境与运行速度的改变，从而可能产生程序运行结果不唯一的问题。<br>特点：间断性、失去了封闭性、不可再现性(由于失去了封闭性，必然失去了不可再现性，没有了封闭性，其运行结果可能被外部环境所干扰，故其每次的运行结果可能都不是唯一的，故不可再现)<br>进程：<br>进程是一个可并发执行的、具有独立功能的程序关于某个数据集合的一次执行过程，也是操作系统进行资源分配和调度的基本单位。<br>进程实体=程序段+相关数据段+PCB<br>进程有以下五个特点：<br>1、 动态性 ，进程的实质是程序的一次执行，既然是一次执行，就表明其有生命周期，具有”创建-运行-消亡“的过程。<br>2、并发性 ，多个进程实体在同一时间内能够并发执行，引入进程的目的也正是为了使内存中的多个程序能够在执行时间上重叠，以提高系统资源的利用率。<br>3、独立性 ，每个进程都是一个独立运行的基本单位，也是系统进行资源分配和调度的基本单位<br>4、异步性 ，各进程按各自独立的、不可预知的速度向前推进。进程具有”执行-暂停-执行“这种间断性活动规律。<br>5、结构性 ，系统为每个进程都配置了一个PCB，从结构上看，每个进程都由：程序段、数据段以及PCB这三部分组成。</p>
+<p>进程的状态及转换：<br>两状态进程模型：运行和非运行<br>进程的三态模型：运行-就绪-阻塞<br>就绪-&gt;运行-&gt;阻塞-&gt;就绪  &amp;&amp;运行-&gt;就绪          就绪不能直接转为阻塞，阻塞也不能直接转为运行。<br>运行：进程获得了CPU和其他所需要的资源，目前正处于运行的状态。<br>阻塞：进程运行中发生了某种等待事件(如发生了IO等待操作)而暂时不能运行的状态，处于该状态的进程不能去竞争CPU，因为此时尽管把CPU分配给该进程，其也无法运行，处于阻塞状态的进程可以有多个。<br>就绪：进程获得了除CPU之外的所需资源，一旦得到CPU就可以立即投入运行。不能运行的原因还是因为CPU的资源太少，智能等待分配CPU资源，在系统中处于就绪状态的进程可能有多个，通常是将它们组成一个进程队列。<br>虽然进程有三个基本状态，但对于每个进程而言，其生命周期内不一定都要经历这三个状态，对于一些计算性的简单进程，运行很短的时间就结束了，也就无须进入阻塞状态，所以个别进程可以不经历阻塞状态。</p>
+<p>进程的五态模型：<br>1、进程的产生<br>2、进程的终止<br>3、进程的</p>
+<p>进程的挂起：新创建的进程一旦被系统接纳就会一直存在于内存中，直到被终止。在这种情况下，一方面随着系统中进程数量的不断增多，系统内存资源会变得越来越紧张；另一方面，由于CPU的速度远远高于I/O的速度，这使得内存中经常出现大部分进程都在等待I/O操作<br>而CPU却空闲的现象。当内存中没有就绪进程时，为了减少CPU的空闲时间，可以采用交换技术将内存中暂时不能运行的某些进程挂起，释放其占用的内存资源，以便重新接纳一个新进程或外存上已经具备运行条件的进程进入内存的进程就绪队列。进程挂起(或者称换出)是指<br>内存中的进程被暂时移出保存到外存中(如磁盘)的过程。当某个进程被挂起时，若被挂起的进程处于运行状态则停止执行。<br>引起挂起的原因大致有一下三种：<br>1、用户的请求。如果用户发现运行程序中有错误，为了调试、检查和修改程序或数据，用户可能会挂起相应的进程。<br>2、父进程的请求。有时父进程希望挂起某个子进程，以便进行某种检查和修改，或协调不同子进程之间的行为。如在程序调试中挂起某些进程。<br>3、操作系统的原因。操作系统引起的挂起情况可分为以下三种。<br>(1)交换：当操作系统发现系统的内存资源已经不能满足运行进程的需要时，可以将当前不重要的进程挂起，以达到平衡系统负载的目的。<br>(2)出现问题或者故障时，当系统出现故障时，操作系统会暂时将系统中涉及该故障的进程挂起，等故障恢复后，再将这些进程恢复到挂起前的状态(换入，由外村调入内存)<br>(3)操作系统的需要。为监视系统的活动，操作系统可以挂起和激活一些系统资源使用状况的进程和用户进程活动的记账进程。</p>
+<p>由于CPU在任一时刻只能执行一条指令，因此任意时刻在CPU上执行的进程只有一个，其执行哪一个进程的哪条指令是由程序计数器指定的。也就是说：在物理层面上所有进程公用一个程序计数器。<br>PCB：进程控制块；是操作系统中最重要的数据结构之一。因为它是进程存在的唯一标志，PCB中存放着操作系统所需的用于描述进程当前情况的全部描述信息，以及控制进程运行的全部控制信息和相关的资源信息。在几乎所有的多道程序操作系统中，进程的PCB都是全部或<br>部分常驻内存，操作系统通过PCB感知进程的存在，并且根据PCB对进程实施控制和管理。<br>大多数的PCB中都包含：1、进程标识符，每个进程都必须有唯一的进程标识符；<br>2、进程的当前状态，它表明进程的当前状态，并作为进程调度程序分配CPU的依据，仅当进程处于就绪状态时才可以被调度执行。若进程处于阻塞状态，还需要在PCB中记录阻塞的原因，以供唤醒原语唤醒进程时使用。<br>3、进程中的程序段与数据段地址。用于将PCB和与之对应的进程在内存或外存的程序段和数据段联系起来。<br>4、进程资源清单。列出进程所拥有的除CPU之外的资源记录，如打开的文件列表和拥有的IO设备等。<br>5、进程优先级<br>6、CPU现场保护区。<br>7、进程同步与通信机制。用户实现进程间互斥、同步、和通信所需的信号量、信箱、或消息队列的指针等。<br>8、PCB队列指针或链接字。用于将处于同一个状态的进程链接成一个队列。<br>9、与进程相关的其他信息。如进程的家族信息、进程的所属用户、进程占用CPU的时间以及进程记账信息等。</p>
+<p>进程块的组织方式：(目前常用的有以下三种)<br>1、线性表方式<br>2、链接表方式，将PCB链接成队列，从而形成进程就绪队列、进程阻塞队列、进程运行队列等。<br>优点：可以很方便的对同类PCB进行管理，操作简单。缺点：查找某个进程的PCB就比较麻烦，因此只适用于小系统中进程数比较少的情况。<br>3、索引表方式，系统按照进程的状态分别建立就绪索引表、运行索引表、阻塞索引表等，通过索引表来管理系统中的进程，索引表可以很方便的查找到某个进程的PCB，因此适用于进程数比较多的情况，但是索引表需要占用一定的内存空间。</p>
+<p>p60</p>
+<h4 id="持续更新中……"><a href="#持续更新中……" class="headerlink" title="持续更新中……"></a>持续更新中……</h4>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/01/数据通信/" rel="next" title="数据通信">
+                <i class="fa fa-chevron-left"></i> 数据通信
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://osq79d99q.bkt.clouddn.com/%E6%9D%BE%E9%BC%A0.png"
+               alt="zl love mf" />
+          <p class="site-author-name" itemprop="name">zl love mf</p>
+           
+              <p class="site-description motion-element" itemprop="description">A man who can't read his mind.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.webhek.com/misc-res/species-in-pieces/" title="碎片-濒临灭绝动物" target="_blank">碎片-濒临灭绝动物</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.skypixel.com/user/2267491517/" title="天空之城" target="_blank">天空之城</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统基础知识"><span class="nav-number">1.</span> <span class="nav-text">操作系统基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理器管理"><span class="nav-number">2.</span> <span class="nav-text">处理器管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#持续更新中……"><span class="nav-number">2.1.</span> <span class="nav-text">持续更新中……</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+   <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zl love mf</span>
+ 
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  您是第:<span id="busuanzi_value_site_uv"></span>位访客
+</span>
+</div>
+
+
+
+<div class="powered-by">
+  <a> </a> mf love zl
+</div>
+
+<div class="theme-info">
+  陕ICP备17012570号  <a href="http://www.miitbeian.gov.cn/"> </a> 
+
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共63.2k字</span>
+</div>
+
+
+<span id="sitetime"></span>  
+<script language=javascript>  
+function siteTime(){  
+window.setTimeout("siteTime()", 1000);  
+var seconds = 1000  
+var minutes = seconds * 60  
+var hours = minutes * 60  
+var days = hours * 24  
+var years = days * 365  
+  
+var today = new Date()  
+var todayYear = today.getFullYear()  
+var todayMonth = today.getMonth()  
+var todayDate = today.getDate()  
+var todayHour = today.getHours()  
+var todayMinute = today.getMinutes()  
+var todaySecond = today.getSeconds()  
+  
+/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)  
+year - 作为date对象的年份，为4位年份值 
+month - 0-11之间的整数，做为date对象的月份 
+day - 1-31之间的整数，做为date对象的天数 
+hours - 0(午夜24点)-23之间的整数，做为date对象的小时数 
+minutes - 0-59之间的整数，做为date对象的分钟数 
+seconds - 0-59之间的整数，做为date对象的秒数 
+microseconds - 0-999之间的整数，做为date对象的毫秒数 */  
+var t1 = Date.UTC(2016,5,17,18,117,00)  
+var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond)  
+var diff = t2-t1  
+  
+var diffYears = Math.floor(diff/years)  
+var diffDays = Math.floor((diff/days)-diffYears*365)  
+var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours)  
+var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes)  
+var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds)  
+document.getElementById("sitetime").innerHTML="　|　一起走过:"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒"  
+}  
+siteTime()  
+</script>  
+        
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+ 
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+
+</body>
+</html>
+
+
