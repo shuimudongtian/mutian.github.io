@@ -98,17 +98,17 @@
 
 
 
-<meta name="description" content="“-&amp;gt;”用于指向结构成员，它的左边应为指向该结构类型的指针（结构指针），而”.”的左边应为该结构类型的变量（结构变量），如已定义了一个结构体struct student，里面有一个int a；然后有一个结构体变量struct student stu及结构体变量指针struct student *p；且有p=&amp;amp;stu，那么p-&amp;gt;a和stu.a表示同一个意思。  堆栈简称为栈（s">
+<meta name="description" content="“-&amp;gt;”用于指向结构成员，它的左边应为指向该结构类型的指针（结构指针），而”.”的左边应为该结构类型的变量（结构变量），如已定义了一个结构体struct student，里面有一个int a；然后有一个结构体变量struct student stu及结构体变量指针struct student *p；且有p=&amp;amp;stu，那么p-&amp;gt;a和stu.a表示同一个意思。  堆栈简称为栈（st">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构-堆栈和队列">
 <meta property="og:url" content="http://www.limingfan.cn/2018/10/04/数据结构-堆栈和队列/index.html">
 <meta property="og:site_name" content="zl&amp;mf的小屋">
-<meta property="og:description" content="“-&amp;gt;”用于指向结构成员，它的左边应为指向该结构类型的指针（结构指针），而”.”的左边应为该结构类型的变量（结构变量），如已定义了一个结构体struct student，里面有一个int a；然后有一个结构体变量struct student stu及结构体变量指针struct student *p；且有p=&amp;amp;stu，那么p-&amp;gt;a和stu.a表示同一个意思。  堆栈简称为栈（s">
+<meta property="og:description" content="“-&amp;gt;”用于指向结构成员，它的左边应为指向该结构类型的指针（结构指针），而”.”的左边应为该结构类型的变量（结构变量），如已定义了一个结构体struct student，里面有一个int a；然后有一个结构体变量struct student stu及结构体变量指针struct student *p；且有p=&amp;amp;stu，那么p-&amp;gt;a和stu.a表示同一个意思。  堆栈简称为栈（st">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-10-04T01:59:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-堆栈和队列">
-<meta name="twitter:description" content="“-&amp;gt;”用于指向结构成员，它的左边应为指向该结构类型的指针（结构指针），而”.”的左边应为该结构类型的变量（结构变量），如已定义了一个结构体struct student，里面有一个int a；然后有一个结构体变量struct student stu及结构体变量指针struct student *p；且有p=&amp;amp;stu，那么p-&amp;gt;a和stu.a表示同一个意思。  堆栈简称为栈（s">
+<meta name="twitter:description" content="“-&amp;gt;”用于指向结构成员，它的左边应为指向该结构类型的指针（结构指针），而”.”的左边应为该结构类型的变量（结构变量），如已定义了一个结构体struct student，里面有一个int a；然后有一个结构体变量struct student stu及结构体变量指针struct student *p；且有p=&amp;amp;stu，那么p-&amp;gt;a和stu.a表示同一个意思。  堆栈简称为栈（st">
 
 
 
@@ -434,7 +434,7 @@
       
 
       
-        <script src="\assets\js\APlayer.min.js"> </script><p>“-&gt;”用于指向结构成员，它的左边应为指向该结构类型的指针（结构指针），而”.”的左边应为该结构类型的变量（结构变量），如已定义了一个结构体struct student，里面有一个int a；然后有一个结构体变量struct student stu及结构体变量指针struct student *p；且有p=&amp;stu，那么p-&gt;a和stu.a表示同一个意思。 </p>
+        <p>“-&gt;”用于指向结构成员，它的左边应为指向该结构类型的指针（结构指针），而”.”的左边应为该结构类型的变量（结构变量），如已定义了一个结构体struct student，里面有一个int a；然后有一个结构体变量struct student stu及结构体变量指针struct student *p；且有p=&amp;stu，那么p-&gt;a和stu.a表示同一个意思。 </p>
 <p>堆栈简称为栈（stack）,是一种只允许在表的一端进行插入和删除操作的线性表，允许操作的一端成为栈顶，栈顶元素的位置由一个被称为栈顶指针的变量给出，另一端则称为栈底，表中没有元素时，称之为空栈。<br>堆栈的插入操作简称为入栈或进栈，删除操作称为出栈或退栈。其元素按照先进后出（FILO）的原则进行的。正因为如此，也称堆栈为后进先出表或者下推表。堆栈是一个动态的结构，随着元素的进出，堆栈的状态是不同的。<br>栈顶元素始终是最上面那个元素。<br>堆栈的基本操作：<br>1、初始化一个堆栈<br>2、测试堆栈是否为空栈；当栈顶为空时，返回一个真值；否则返回一个假值。这是对堆栈进行删除操作或取当前栈顶元素操作之前的必要操作。<br>3、测试堆栈是否已满。当堆栈已满时，返回一个真值；否则返回一个假值。这个操作通常是在堆栈采用顺序存储结构时，对堆栈做插入操作之前需要进行的一个操作。<br>4、在堆栈的顶端位置插入一个新的数据元素，简称为进栈或者入栈，该操作相当于在线性表的最后那个元素位置插入一个新的数据元素。显然该操作会改变栈顶指针的位置。<br>5、删除堆栈的栈顶元素。简称出栈或退栈，在实际的应用中，被删除的数据元素往往有某种用途，因此可以将该操作定义为一个函数，函数返回栈顶元素，并从堆栈中删除它，有的处理方法是在进行删除动作之前先保存被删除的元素。该操作也会改变栈顶指针的位置。(改变栈顶指针位置)<br>6、取当前栈顶元素。该操作与5不同，不改变栈顶指针的位置。</p>
 <p>堆栈的顺序存储结构<br>最简单的：可用一个数组来描述堆栈的顺序存储结构。一般将采用顺序存储结构的堆栈将成为顺序堆栈。</p>
 <p>顺序堆栈的构造<br>在实际程序的设计中，堆栈的顺序存储结构可以利用一个具有M个元素的数组STACK[0..M-1]来描述。其中，STACK作为堆栈的名字，数组的上届M表示堆栈的最大容量。定义一个整型变量top作为堆栈的栈顶指针，它指出某一时刻堆栈栈顶元素的位置。STACK[0]为第一个进入堆栈的元素。STACK[TOP]为当前的栈顶元素，当堆栈为空时，top=-1。<br>由于堆栈是一个动态结构，而数组是一个静态结构，因此利用一个静态结构的数组描述一个动态结构的堆栈，存在着所谓的溢出问题。当堆栈中已经有M个元素时，如果此时再做进栈操作则会产生溢出，称这种现象为上溢；对空栈进行删除操作也会产生溢出，称之为下溢。为了避免溢出，在对堆栈进行进栈操作和退栈操作之前，应该分别测试堆栈是否已满或者是否为空。</p>
@@ -609,7 +609,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
