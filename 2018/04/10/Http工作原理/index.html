@@ -105,12 +105,12 @@
 <meta property="og:site_name" content="zl&amp;mf的小屋">
 <meta property="og:description" content="前言">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://osq79d99q.bkt.clouddn.com/%E4%B9%9D%E6%9C%88.png">
-<meta property="og:updated_time" content="2018-10-20T02:52:50.953Z">
+<meta property="og:image" content="http://image.limingfan.cn/%E4%B9%9D%E6%9C%88.png">
+<meta property="og:updated_time" content="2019-01-27T06:56:32.685Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Http工作原理">
 <meta name="twitter:description" content="前言">
-<meta name="twitter:image" content="http://osq79d99q.bkt.clouddn.com/%E4%B9%9D%E6%9C%88.png">
+<meta name="twitter:image" content="http://image.limingfan.cn/%E4%B9%9D%E6%9C%88.png">
 
 
 
@@ -383,8 +383,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-20T10:52:50+08:00">
-                2018-10-20
+              <time title="更新于" itemprop="dateModified" datetime="2019-01-27T14:56:32+08:00">
+                2019-01-27
               </time>
             
           </span>
@@ -436,7 +436,7 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><center><img src="http://osq79d99q.bkt.clouddn.com/%E4%B9%9D%E6%9C%88.png" alt=""></center><br><a id="more"></a><br>　　最近学了数据与网络通信，书里涉及到了部分TCP/IP协议和HTTP协议，对于HTTP协议只是很简单的提到了一下，故自己搜集资料，详细地了解了一下HTTP协议的工作原理，记录于此。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><center><img src="http://image.limingfan.cn/%E4%B9%9D%E6%9C%88.png" alt=""></center><br><a id="more"></a><br>　　最近学了数据与网络通信，书里涉及到了部分TCP/IP协议和HTTP协议，对于HTTP协议只是很简单的提到了一下，故自己搜集资料，详细地了解了一下HTTP协议的工作原理，记录于此。</p>
 <h3 id="Http协议简介"><a href="#Http协议简介" class="headerlink" title="Http协议简介"></a>Http协议简介</h3><p>　　HTTP协议（HyperText Transfer Protocol，超文本传输协议）是用于从WWW服务器传输超文本到本地浏览器的传送协议。它可以使浏览器更加高效，使网络传输减少。它不仅保证计算机正确快速地传输超文本文档，还确定传输文档中的哪一部分，以及哪部分内容首先显示(如文本先于图形)等。    </p>
 <h3 id="计算机的相互通信协议"><a href="#计算机的相互通信协议" class="headerlink" title="计算机的相互通信协议"></a>计算机的相互通信协议</h3><p>　　互联网的主要通信协议就是TCP/IP协议。两台计算机之间的通信是通过TCP/IP协议在因特网上进行的。TCP : Transmission Control Protocol 传输控制协议和IP：Internet Protocol 网际协议。<br>IP：计算机之间的通信<br>　　IP协议是计算机用来相互识别的通信的一种机制，每台计算机都有一个IP.用来在internet上标识这台计算机。  IP 负责在因特网上发送和接收数据包。通过 IP，消息（或者其他数据）被分割为小的独立的包，并通过因特网在计算机之间传送。IP 负责将每个包路由至它的目的地。<br>　　IP协议仅仅是允许计算机相互发消息，但它并不检查消息是否以发送的次序到达而且没有损坏（只检查关键的头数据）。为了提供消息检验功能，直接在IP协议上设计了传输控制协议TCP.<br>TCP : 应用程序之间的通信<br>TCP确保数据包以正确的次序到达，并且尝试确认数据包的内容没有改变。TCP在IP地址之上引端口（port），它允许计算机通过网络提供各种服务。一些端口号为不同的服务保留，而且这些端口号是众所周知。<br>　　服务或者守护进程：在提供服务的机器上，有程序监听特定端口上的通信流。例如大多数电子邮件通信流出现在端口25上，用于wwww的HTTP通信流出现在80端口上。<br>　　当应用程序希望通过 TCP 与另一个应用程序通信时，它会发送一个通信请求。这个请求必须被送到一个确切的地址。在双方“握手”之后，TCP 将在两个应用程序之间建立一个全双工 (full-duplex) 的通信，占用两个计算机之间整个的通信线路。TCP 用于从应用程序到网络的数据传输控制。TCP 负责在数据传送之前将它们分割为 IP 包，然后在它们到达的时候将它们重组。<br>　　TCP/IP 就是TCP 和 IP 两个协议在一起协同工作，有上下层次的关系。<br>　　TCP 负责应用软件（比如你的浏览器）和网络软件之间的通信。IP 负责计算机之间的通信。TCP 负责将数据分割并装入 IP 包，IP 负责将包发送至接受者，传输过程要经IP路由器负责根据通信量、网络中的错误或者其他参数来进行正确地寻址，然后在它们到达的时候重新组合它们。<br>HTTP协议是基于TCP协议的，TIP/IP协议族共有五层，从下到上分别为：物理层、数据链路层、网络层、传输层、应用层，而HTTP就是应用层的协议。    </p>
 <h3 id="HTTP请求响应模型"><a href="#HTTP请求响应模型" class="headerlink" title="HTTP请求响应模型"></a>HTTP请求响应模型</h3><p>HTTP由请求和响应构成，是一个标准的B/S模型（浏览器服务器模型），HTTP协议总是由浏览器端发起请求，服务器回送响应，而且HTTP是一个无状态的协议，即浏览器和服务器不需要建立持久的连接，这意味着当一个浏览器端向服务器端发出请求时，然后服务器返回一个响应，连接就断开，在服务器端不保留连接的有关信息.HTTP遵循请求(Request)/应答(Response)模型。客户机（浏览器）向服务器发送请求，服务器处理请求并返回适当的应答。所有HTTP连接都被构造成一套请求和应答。     </p>
